@@ -10,6 +10,7 @@ serviceAvailability - integer arraylist  - tracks if a service is available (1),
 cartIndices - integer array list - stores indices of services added to the user's cart. 
 uniqueCategories - string array list - temporarily stores the unique/ distinct categories for browsing. 
 matchingIndicies - integer array list  - temporarily stores indices of services in the selected category from the user. 
+availableIndices - Integer array list - used to store the list of available services. 
 
 important variables and use in the program - 
 
@@ -25,6 +26,11 @@ important variables and use in the program -
  status - String variable - used to temporarily hold a service as "fully booked" if the service has already been selected. 
  again - String variable - used in the choice 1 part of the program to ask the user whether they want to continue to add services. 
  selectedCategory - String variable - used to keep or hold the category that the user selected for browsing or looking into the service in a specific category. 
+ removeServiceIndex - Integer variable - the index value in the service list of the service being removed. 
+ updateChoice - Integer variable -  used to get the cart position the user wants to update. 
+ oldServiceIndex - Integer variable - the index value of the currentely booked service chosen to be replaced. 
+ newServiceChoice - Integer variable - used to get the new service chosen from the list of available services. 
+ newServiceIndex - integer variable - the index value in the service list of the new service. 
  - These varibales are important as they ensure that the arraylists can stay in sync, be a way or temporary storage,  and give a better, clearer user experience. 
  
 features - 
@@ -50,11 +56,19 @@ Choice 3 - checkout
 - exits the program.
 - Important as it allows people to check out or leave the program and check out the services in their cart. 
  
-Choice 4 - View & manage the cart
+Choice 4 - remove & manage the cart
 - The cart displays all selected services and the total cost
 - Displays the option to remove a service from the cart by selecting the one you want to remove.
 - Services are removed from the cart if selected.
-- Important as it allows people to remove a service, just like how you would in real life. 
+- Important as it allows people to remove a service, just like how you would in real life.
+
+choice 5 - update services in the cart
+- displays the users real time cart
+- asks user to select what service they want to update
+- makes the chosen service temporarily avaialble again
+- shows list of all available services
+- cart gets updated with new service
+- new service gets marked as booked. 
 
 logical structure - 
 The whole program is structured around a while (true) loop, which is the main loop, which displays the menu with 4 options - 
